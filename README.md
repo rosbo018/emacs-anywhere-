@@ -10,3 +10,6 @@ Then, configure the keybindings in the init.el, and the i3 configuration to your
 
 chmod +x ec.sh
 reinitialize the configuration of i3, start emacs as a server with emacs --daemon or run M-x 'server-start' and you're off
+
+if you want to add more configuration to the new buffer as it starts up, all you have to do is add things to the ec.sh script.
+An example is: I want to be able to use spell checking in the buffer, all I had to do was insert `(flyspell-mode 1)` into the `progn`, and it would automatically start flyspell as the buffer starts 
