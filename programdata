@@ -1,0 +1,25 @@
+i3 config::
+bindsym $mod+Shift+w exec ~/.config/i3/ec.sh
+for_window [title="temp-emacs-window"] floating enable
+
+emacs init.el::
+(require 'xclip)
+(xclip-mode 1)
+(defun copy-and-exit ()
+  "copies the text from the current buffer and kills it"
+  (interactive)
+  (progn
+    (clipboard-kill-ring-save (point-min) (point-max))
+    (xclip-select-text (current-kill 0))
+    (kill-buffer (buffer-name))
+    (delete-frame)
+    ))
+
+(global-set-key (kbd "<f12>") 'copy-and-exit)
+
+ec.sh::
+xclip -out -selection primary | xclip -in -selection clipboard;
+emacsclient -c -e '(progn (delete-other-windows)
+                          (get-buffer-create "temp-emacs-window")
+                          (switch-to-buffer "temp-emacs-window")
+                          )';
