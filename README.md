@@ -4,6 +4,8 @@ This version is specific for i3 wm, if you want to use a de/wm that's not i3, al
 
 this program require: emacs, i3, xclip, the xclip module for emacs (install from melpa)
 
+only tested on Linux
+
 to install, copy the file 'ec.sh' to the desired location, append init.el to your init.el, and append i3-config to your i3 configuration file.
 
 Then, configure the keybindings in the init.el, and the i3 configuration to your choice.
