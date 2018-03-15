@@ -1,0 +1,2 @@
+bindsym $mod+Shift+w exec ~/.config/i3/ec.sh
+for_window [title="temp-emacs-window"] floating enable
