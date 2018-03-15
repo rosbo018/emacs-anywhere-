@@ -18,7 +18,6 @@ emacs init.el::
 (global-set-key (kbd "<f12>") 'copy-and-exit)
 
 ec.sh::
-xclip -out -selection primary | xclip -in -selection clipboard;
 emacsclient -c -e '(progn (delete-other-windows)
                           (get-buffer-create "temp-emacs-window")
                           (switch-to-buffer "temp-emacs-window")
